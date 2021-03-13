@@ -9,7 +9,7 @@
     
 ####1 Ambulance Sevice :- user can see available ambulances.
                           user can registered a new ambulance.
-                              **admin verify the ambulance request and he verified the ambulance registration request**
+                              **admin verify the ambulance request and he can verified/not verified the ambulance registration request**
                               
 ####2 Doctor Service :- user can check hospitals and can take online appointment
 
