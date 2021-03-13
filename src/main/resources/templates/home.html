@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Dropdown Menu Bar</title> -->
+    <link rel="stylesheet" href="css/dropdownmenu.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div>
+      <img src="logo.png" height="68px" width="100px" align="left">
+      <label class="logo">Healthcare & Wellness</label>
+      <ul>
+<li><a class="active" href="#"> Home
+<i class="fas fa-caret-down"></i>
+</a>
+<ul>
+<li><a th:href="@{/}">Contact</a></li>
+<li><a th:href="@{/logout}">Logout</a></li>
+</ul>
+</li>
+<li><a href="#"> Doctor
+          <i class="fas fa-caret-down"></i>
+        </a>
+          <ul>
+<li><a th:href="@{/doctor}">Appointment</a></li>
+</ul>
+</li>
+<li><a href="#"><i class="fa fa-ambulance" aria-hidden="true"></i> Ambulance
+          <i class="fas fa-caret-down"></i>
+        </a>
+          <ul>
+            <li><a th:href="@{/ambulance}">Available</a></li>
+            <li><a th:href="@{/ambulanceRegistration}">Register</a></li>
+            <li><a th:href="@{/admin/viewAmbulanceRequest}">Request</a></li>
+          </ul>
+</li>
+<li><a href="#"> <i class="fa fa-tint" aria-hidden="true"></i>Blood Bank
+          <i class="fas fa-caret-down"></i>
+        </a>
+          <ul>
+<li><a th:href="@{/bloodBanks}">Blood Bank</a></li>
+<li><a href="#">Direct Blood
+              <i class="fas fa-caret-right"></i>
+            </a>
+              <ul>
+<li><a th:href="@{/donar}">Donor</a></li>
+<li><a href="#">Acceptor
+  <i class="fas fa-caret-right"></i>
+
+</a>
+<ul>
+  <li><a th:href="@{/acceptor/A+}">A+</a></li>
+  <li><a th:href="@{/acceptor/B+}">B+</a></li>
+  <li><a th:href="@{/acceptor/O+}">O+</a></li>
+  <li><a th:href="@{/acceptor/AB+}">AB+</a></li>
+  <li><a th:href="@{/acceptor/A-}">A-</a></li>
+  <li><a th:href="@{/acceptor/B-}">B-</a></li>
+  <li><a th:href="@{/acceptor/O-}">O-</a></li>
+  <li><a th:href="@{/acceptor/AB-}">AB-</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><a href="#"> <i class="fa fa-bed" aria-hidden="true"></i>COVID-19
+          <i class="fas fa-caret-down"></i>
+        </a>
+          <ul>
+<li><a th:href="@{/covid/availableSeat}">Hospital</a></li>
+<li><a th:href="@{/covid/precaution}">Precaution</a></li>
+<li><a th:href="@{/covid/hospitalAdmin/updateSeat}">HospitalAdmin</a></li>
+</ul>
+</li>
+</div>
+
+<marquee width="60%" direction="down" height="100px" scrollamount="1"> As we all know that mediciaton facilities has very crucial in our day to day life specially in these pandemic era. The aim of this site is to provide remedy to the needy person. All this single platform you can get a appointment to your doctor you can get blood directly from the donor as well as you also can donoate blood to the needed one. There are many other facilities such as Ambulance Active, Covid-19 facilities etc.</marquee>
+
+
+<!-- Slide Show -->
+<section>
+  <img class="mySlides" src="images (1).png"
+  style="width:60%">
+  <img class="mySlides" src="images (6).jfif"
+  style="width:60%">
+  <img class="mySlides" src="download (5).jfif"
+  style="width:60%">
+  <img class="mySlides" src="download.jfif"
+  style="width:60%">
+  <img class="mySlides" src="images (4).jfif" style="width:60%" >
+</section><br><br><br><br><br>
+<center>
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-pinterest-p"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-flickr"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <p class="w3-medium">
+  
+  </p>
+</footer>
+</center>
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
+  </body>
+</html>

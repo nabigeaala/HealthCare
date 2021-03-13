@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page - Healthcare & Wellness</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      #feature {
+        width: 100%;
+        padding: 70px 0;
+      }
+
+      .title-text {
+        text-align: center;
+        padding-bottom: 0px;
+      }
+
+      .title-text p {
+        margin: auto;
+        font-size: 20px;
+        color: #009688;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+      }
+
+      .title-text p::after {
+        content: "";
+        width: 50px;
+        height: 35px;
+        background: linear-gradient(#019587, #fff);
+        position: absolute;
+        top: -20px;
+        left: 0;
+        z-index: -1;
+        transform: rotate(10deg);
+        border-top-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+      }
+
+      .title-text h1 {
+        font-size: 50px;
+      }
+
+      .title-text h2 {
+        font-size: 38px;
+      }
+
+      .title-text h3 {
+        font-size: 32px;
+      }
+
+      .title-text h4 {
+        font-size: 28px;
+      }
+
+      body {
+        background: #ffffff;
+        padding: 0 10px;
+      }
+      .wrapper {
+        max-width: 500px;
+        width: 100%;
+        background: #fff;
+        margin: 20px auto;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+        padding: 30px;
+      }
+
+      .wrapper .title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #07d9fe;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .wrapper .form {
+        width: 100%;
+      }
+
+      .wrapper .form .inputfield {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+
+      .wrapper .form .inputfield label {
+        width: 200px;
+        color: #757575;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+
+      .wrapper .form .inputfield .input,
+      .wrapper .form .inputfield .textarea {
+        width: 100%;
+        outline: none;
+        border: 1px solid #d5dbd9;
+        font-size: 15px;
+        padding: 8px 10px;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+      }
+
+      .wrapper .form .inputfield .textarea {
+        width: 100%;
+        height: 125px;
+        resize: none;
+      }
+
+      .wrapper .form .inputfield .custom_select {
+        position: relative;
+        width: 100%;
+        height: 37px;
+      }
+
+      .wrapper .form .inputfield .custom_select:before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        border: 8px solid;
+        border-color: #d5dbd9 transparent transparent transparent;
+        pointer-events: none;
+      }
+
+      .wrapper .form .inputfield .custom_select select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        border: 0px;
+        padding: 8px 10px;
+        font-size: 15px;
+        border: 1px solid #d5dbd9;
+        border-radius: 3px;
+      }
+
+      .wrapper .form .inputfield .input:focus,
+      .wrapper .form .inputfield .textarea:focus,
+      .wrapper .form .inputfield .custom_select select:focus {
+        border: 1px solid #07b8fe;
+      }
+
+      .wrapper .form .inputfield p {
+        font-size: 14px;
+        color: #757575;
+      }
+      .wrapper .form .inputfield .check {
+        width: 15px;
+        height: 15px;
+        position: relative;
+        display: block;
+        cursor: pointer;
+      }
+      .wrapper .form .inputfield .check input[type="checkbox"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+      .wrapper .form .inputfield .check .checkmark {
+        width: 15px;
+        height: 15px;
+        border: 1px solid #07eefe;
+        display: block;
+        position: relative;
+      }
+      .wrapper .form .inputfield .check .checkmark:before {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 2px;
+        width: 5px;
+        height: 2px;
+        border: 2px solid;
+        border-color: transparent transparent #fff #fff;
+        transform: rotate(-45deg);
+        display: none;
+      }
+      .wrapper
+        .form
+        .inputfield
+        .check
+        input[type="checkbox"]:checked
+        ~ .checkmark {
+        background: #07b8fe;
+      }
+
+      .wrapper
+        .form
+        .inputfield
+        .check
+        input[type="checkbox"]:checked
+        ~ .checkmark:before {
+        display: block;
+      }
+
+      .wrapper .form .inputfield .btn {
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 15px;
+        border: 0px;
+        background: #07c4fe;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 3px;
+        outline: none;
+      }
+
+      .wrapper .form .inputfield .btn:hover {
+        background: #13dafd;
+      }
+
+      .wrapper .form .inputfield:last-child {
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 420px) {
+        .wrapper .form .inputfield {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .wrapper .form .inputfield label {
+          margin-bottom: 5px;
+        }
+        .wrapper .form .inputfield.terms {
+          flex-direction: row;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="feature">
+      <div class="title-text">
+        <p>Admin</p>
+        <h1 th:text= "${message}"></h1>
+        <h1 th:text= "${hospital.name}"></h1>
+        <h2 th:text= "${hospital.registrationNumber}">Registration No:</h2>
+        <h3 th:text= "${hospital.address}">Address:</h3>
+        <h4 th:text= "${hospital.mobileNumber}">Contact:</h4>
+      </div>
+      <form action="/covid/hospitalAdmin/updateSeat" method="post">
+        <div class="wrapper">
+          <div class="title">Registration Details</div>
+          <div class="form">
+            <div class="inputfield">
+              <label for="Number_Of_Seats">Number Of Seats</label>
+              <input
+                type="text"
+                class="input"
+                placeholder="Enter Total Number of Seats"
+                name="numberOfSeats"
+                id="Number_Of_Seats"
+                required
+              />
+            </div>
+            <div class="inputfield">
+              <label for="Available_Seats">Available Seats</label>
+              <input
+                type="text"
+                class="input"
+                placeholder="Enter Available Seats"
+                name="availableSeats"
+                id="Available_Seats"
+                required
+              />
+            </div>
+            <div class="inputfield">
+              <input type="submit" value="Submit" class="btn" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

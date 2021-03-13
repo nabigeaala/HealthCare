@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page - Healthcare & Wellness</title>
+    <link rel="stylesheet" href="css/updateSeatPage.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="feature">
+      <div class="title-text">
+        <p>Admin</p>
+        <h1 th:text="${hospital.name}"></h1>
+        <h2 th:text="${hospital.registrationNumber}"></h2>
+        <h3 th:text="${hospital.address}"></h3>
+        <h4 th:text="${hospital.mobileNumber}"></h4>
+        <h4 th:text="${message}"></h4>
+      </div>
+      <form action="/covid/hospitalAdmin/updateSeat" method="post">
+        <div class="wrapper">
+          <div class="title">Registration Details</div>
+          <div class="form">
+            <div class="inputfield">
+              <label for="Number_Of_Seats">Number Of Seats</label>
+              <input
+                type="text"
+                class="input"
+                placeholder="Enter Total Number of Seats"
+                name="numberOfSeats"
+                id="Number_Of_Seats"
+                required
+              />
+            </div>
+            <div class="inputfield">
+              <label for="Available_Seats">Available Seats</label>
+              <input
+                type="text"
+                class="input"
+                placeholder="Enter Available Seat"
+                name="availableSeats"
+                id="Available_Seats"
+                required
+              />
+            </div>
+            <div class="inputfield">
+              <input type="submit" value="Submit" class="btn" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

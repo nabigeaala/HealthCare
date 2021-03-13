@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body { 
+  background-image: url('photo.jpg');
+  background-repeat: no-repeat;
+  background-size: 1350px 860px;
+  display: inline-flex;
+    margin-left: 690px;
+  font-size: 80%;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+  width: 40%;
+  padding-top: 0px;
+  padding-bottom:0px;
+  padding-right: 50px;
+  padding-left: 70px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+ .container { 
+  padding: 110px;
+  background-color: powderblue;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 0px;
+}
+
+/* Set a style for the submit button */
+.registerbtn { 
+  background-color: #4CAF50;
+  color: white;
+  padding: 18px 20px;
+  margin: 8px 0px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.message{
+  text-align : center;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: powderblue;
+  text-align: center;
+}
+</style>
+</head>
+<body>  
+ <h1 id="message" th:text="${message}"></h1>
+<form action="/ambulanceRegistration" method="post">
+  <div class="container">
+    <h1>Ambulance Registeration Form</h1>
+
+    <hr>
+
+     <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="hospitalName" id="name" required>
+
+
+     <label for="mobile number"><b>Mobile No</b></label>
+    <input type="number" placeholder="Mobile No" name="contactNumber" id="Mobile No" required>
+
+
+    <label for="email"><b>Car Number</b></label>
+    <input type="text" placeholder="Car Number" name="plateNo" id="carnumber" required>
+
+    <label for="address"><b>Address</b></label>
+    <input type="text" placeholder="Address" name="address" id="address" required>
+
+     
+    <hr>
+    <p>By registering details you agree to our <a href="#">Terms &amp; Privacy</a>.</p>
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+</form>
+  
+</body>
+</html>

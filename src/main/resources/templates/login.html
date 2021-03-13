@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body { 
+  background-image: url('photo.jpeg');
+  background-repeat: no-repeat;
+  background-size: 1350px 860px;
+  background-position: center ;
+  display: inline-flex;
+    margin-left: 690px;
+  font-size: 80%;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+  width: 40%;
+  padding-top: 0px;
+  padding-bottom:0px;
+  padding-right: 50px;
+  padding-left: 70px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+ .container { 
+  padding: 110px;
+  background-color: powderblue;
+}
+
+/* Full-width input fields */
+input[type=text],input[type= password]
+ {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 0px;
+}
+
+/* Set a style for the submit button */
+.loginbtn { 
+  background-color: #4CAF50;
+  color: white;
+  padding: 18px 20px;
+  margin: 8px 0px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.loginbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: powderblue;
+  text-align: center;
+}
+</style>
+</head>
+
+
+<body>
+   <h2 th:text="${message}"></h2>
+   <form action="/login" method="post">
+   <div class="container">
+    <h1>Login Here</h1>
+
+    <hr>
+    <label for="username"><b>username</b></label>
+    <input type="text" placeholder="username" name="username" id="email" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="Password" placeholder="password" name="password" id="password" required>
+     
+    <hr>
+    <p>By creating an account you agree to our <a href="">Terms & Privacy</a>.</p>
+
+    <button type="submit" class="loginbtn">Login</button>
+    <a th:href="@{/covid/register}"><button type="submit" class="loginbtn">Sign Up</button></a>
+  </div>
+  <div class="container signin">
+    <h5 >Already have an account? <a th:href="@{/covid/register}">Sign up</a>.</h5>
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:name='donar'></title>
+    <link rel="stylesheet" href="css/Donor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="feature">
+        <div class="title-text">
+            <p>Blood Bank</p>
+            <h1>Donar</h1>
+        </div>
+        <div class="wrapper">
+            <div class="title">
+              Registration Form
+            </div>
+            <div class="form">
+            <form th:action="@{/register}" method="post">
+               <div class="inputfield">
+                  <label>First Name</label>
+                  <input type="text" class="input" name="fName" min="3" maxlength="20" pattern="^[A-Za-z]+$" title="Only letters allowed" required>
+               </div>  
+                <div class="inputfield">
+                  <label>Last Name</label>
+                  <input type="text" class="input" name="lName" min="3" maxlength="20" pattern="^[A-Za-z]+$" title="Only letters allowed" required>
+               </div>  
+               <div class="inputfield">
+                <label>Aadhaar Number</label>
+                <input type="number" class="input" name="aadharNumber" min="100000000000" max="999999999999" title="Only 12 digit is allowed" required>
+             </div> 
+                <div class="inputfield">
+                  <label>Gender</label>
+                  <div class="custom_select">
+                    <select name="gender" required>
+                      <option value="">Select</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div> 
+               </div> 
+               <div class="inputfield">
+                <label>Blood Type/Group</label>
+                <div class="custom_select">
+                  <select name="bloodGroup" required>
+                    <option value="">Select</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                  </select>
+                </div>
+             </div> 
+                <div class="inputfield">
+                  <label>Email Address</label>
+                  <input type="email" class="input" name="email">
+               </div> 
+              <div class="inputfield">
+                  <label>Phone Number</label>
+                  <input type="number" class="input" name="phone" min="1000000000" max="9999999999" title="only 10 digit number is allowed">
+               </div> 
+              <div class="inputfield">
+                  <label>Address</label>
+                  <textarea class="textarea" name="address" required></textarea>
+               </div> 
+              <div class="inputfield">
+                  <label>Postal Code</label>
+                  <input type="text" class="input" name="postalCode" required>
+               </div> 
+              <div class="inputfield terms">
+                  <label class="check">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <p>Agreed to terms and conditions</p>
+               </div> 
+              <div class="inputfield">
+                <input type="submit" value="Register" class="btn">
+              </div>
+              </form>
+            </div>
+        </div>	
+
+    </section>
+</body>
+</html>

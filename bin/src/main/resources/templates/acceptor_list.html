@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>ambulance queue page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Registration Queue</h2>          
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Blood Group</th>
+        <th>Contact No</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="bloodDetail : ${bloodDetails}">
+          <td th:text="${bloodDetail.fName + ' ' +bloodDetail.lName}"></td>
+          <td th:text="${bloodDetail.gender}"></td>
+          <td th:text="${bloodDetail.bloodGroup}"></td>
+          <td th:text="${bloodDetail.phone}"></td>
+          <td th:text="${bloodDetail.address}"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

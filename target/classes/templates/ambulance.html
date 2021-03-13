@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+
+   .center{
+       margin-left: auto;
+       margin-right: auto;
+   }
+   
+body {background-color: #ffffdd;}
+h1   {color: green;
+     text-align : center;
+font-family: verdana;
+  font-size: 300%;}
+  table {color: green;
+  	font-family: verdana;
+  	border-collapse:separate;
+  	margin: 3px; 
+    border-spacing: 0;
+  	font-size: 120%;}
+
+ td{
+ 	margin-left: 5px;
+ 	padding: 5px;
+ } 	
+
+</style>	
+</head>
+<body>
+    <h1 th:text="${message}"></h1>
+	<h1>AMBULANCE</h1>
+<table border="1" class="center">
+<tr>
+<th>S.NO</th>
+<th>NAME</th>
+<th>NUMBER PLATE</th>
+<th>PHONE NUMBER</th>
+<th>ADDRESS</th>
+</tr>
+<tr th:each="ambulance : ${ambulances}">
+	<td th:text="${ambulance.key}"></td>
+	<td th:text="${ambulance.value.hospitalName}"></td>
+	<td th:text="${ambulance.value.plateNo}"></td>
+	<td th:text="${ambulance.value.contactNumber}"></td>
+	<td th:text="${ambulance.value.address}"></td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Centralized Accident Trauma Service (CATS), New Delhi</td>
+	<td>none</td>
+	<td>102, 1099</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>Escort Hospital, New Delhi</td>
+	<td>none</td>
+	<td>011- 26825000</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>Moolchand Hospital, New Delhi</td>
+	<td>none</td>
+	<td>011- 42000000</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>Batra Hospital, New Delhi</td>
+	<td>none</td>
+	<td>011- 26083747</td>
+</tr>
+<tr>
+	<td>6</td>
+	<td>Rajiv Gandhi Cancer Institute, New Delhi</td>
+	<td>none</td>
+	<td>011- 27051011 to 29</td>
+</tr>
+<tr>
+	<td>7</td>
+	<td>Sir Ganga Ram Hospital New Delhi</td>
+	<td>none</td>
+	<td>011- 25750000, 25757575</td>
+</tr>
+<tr>
+	<td>8</td>
+	<td>Vidyasagar Institute of Mental Health and Neurosciences (VIMHANS), New Delhi</td>
+	<td>none</td>
+	<td>011- 26924302</td>
+</tr>
+<tr>
+	<td>9</td>
+	<td>Max Emergency Ambulance, New Delhi</td>
+	<td>none</td>
+	<td>011- 40554055</td>
+</tr>
+<tr>
+	<td>10</td>
+	<td>AIDS Diagnostic Centre, New Delhi</td>
+	<td>none</td>
+	<td>011 64360750</td>
+</tr>
+<tr>
+	<td>11</td>
+	<td>National Heart Institute</td>
+	<td>none</td>
+	<td>011 6414156</td>
+</tr>
+<tr>
+	<td>12</td>
+	<td>Goodmans Rescue Ambulance Service</td>
+	<td>none</td>
+	<td>011 29231665, 46566890</td>
+</tr>
+<tr>
+	<td>13</td>
+	<td>Holy Angles Hospital</td>
+	<td>none</td>
+	<td>011 6143411</td>
+</tr>
+<tr>
+	<td>14</td>
+	<td>MP Heart Centre, New Delhi</td>
+	<td>none</td>
+	<td>011- 6413436</td>
+</tr>
+<tr>
+	<td>15</td>
+	<td>Delhi Psychiatry Centre, New Delhi</td>
+	<td>none</td>
+	<td>011- 2214727</td>
+</tr>
+<tr>
+	<td>16</td>
+	<td>Anand Hospital, New Delhi</td>
+	<td>none</td>
+	<td>011- 2224126</td>
+</tr>
+<tr>
+	<td>17</td>
+	<td>GM Modi Hospital, New Delhi</td>
+	<td>none</td>
+	<td>011- 6852112</td>
+</tr>
+<tr>
+	<td>18</td>
+	<td>PS Funeral and Ambulance Services Private Limited, New Delhi</td>
+	<td>none</td>
+	<td>09350016581, 08373903017</td>
+</tr>
+<tr>
+	<td>19</td>
+	<td>Max Emergency Ambulance, New Delhi</td>
+	<td>none</td>
+	<td>011- 40554055</td>
+</tr>
+<tr>
+	<td>20</td>
+	<td>Goodmans Rescue Ambulance Service, New Delhi</td>
+	<td>none</td>
+	<td>011- 29231665, 46566890</td>
+</tr>
+</table>
+</body>
+</html>
